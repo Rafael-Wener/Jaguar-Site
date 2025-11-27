@@ -11031,6 +11031,8 @@ body {
   }
   #mainNav.navbar-shrink {
     background-color: #fff;
+    transition: background-color 0.5s ease-in-out, padding 0.5s ease-in-out;
+  }
   }
   #mainNav.navbar-shrink .navbar-brand {
     color: #000;
@@ -11051,7 +11053,7 @@ body {
     outline: none;
     border-bottom: 0.25rem solid #ba0c2f;
   }
-}
+
 
 .btn {
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
@@ -11200,4 +11202,297 @@ body {
 
 .footer {
   padding: 5rem 0;
+}
+/* O Botão Flutuante */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999; /* Garante que fique acima de tudo */
+    background-color: #25d366; /* Verde Oficial do Zap */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 35px;
+    line-height: 60px; /* Centraliza o ícone verticalmente */
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    
+    /* Aqui chamamos a animação */
+    animation: pulso-zap 2s infinite; 
+}
+
+/* Efeito ao passar o mouse */
+.whatsapp-btn:hover {
+    background-color: #128c7e; /* Verde mais escuro */
+    transform: scale(1.1); /* Aumenta um pouquinho */
+}
+
+/* A Animação do Pulso (Ondas) */
+@keyframes pulso-zap {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); /* A onda some */
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+/* Container que limita o tamanho (para a imagem não sair para fora) */
+.zoom-container {
+  overflow: hidden; /* O segredo: corta o que "vazar" */
+  display: block;
+}
+
+/* A imagem em si */
+.zoom-container img {
+  transition: transform 0.8s ease; /* Movimento bem suave */
+}
+
+/* O que acontece quando passa o mouse */
+.zoom-container:hover img {
+  transform: scale(1.1); /* Aumenta 10% */
+  filter: brightness(1.1); /* Fica levemente mais brilhante */
+}
+.scroll-down-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-15px); /* Pula pra cima */
+  }
+  60% {
+      transform: translateY(-7px);
+  }
+}
+/* Container que delimita o espaço */
+.album-container {
+    position: relative; /* Segura as imagens absolutas dentro dele */
+    width: 100%;        /* Ocupa a largura da coluna */
+    padding-bottom: 56.25%; /* TRUQUE: Cria uma proporção 16:9 (formato de vídeo/youtube) */
+    height: 0;          /* A altura é controlada pelo padding acima */
+    overflow: hidden;   /* O que passar do tamanho é cortado (não vaza) */
+    background-color: #000; /* Fundo preto para não piscar branco */
+}
+
+/* As imagens dentro do álbum */
+.album-img {
+    position: absolute; /* Permite empilhar uma na outra */
+    top: 0;
+    left: 0;
+    width: 100% !important;  /* Força largura total */
+    height: 100% !important; /* Força altura total */
+    object-fit: cover;       /* Cobre o espaço sem esticar/deformar a foto */
+    opacity: 0;              /* Começa invisível */
+    transition: opacity 0.5s ease; /* Transição suave */
+    z-index: 1;
+}
+
+/* A imagem que está ativa (visível) */
+.album-img.active {
+    opacity: 1;
+    z-index: 2;
+}
+/* Efeito nos Cards do Estoque */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Para a imagem não vazar se der zoom */
+}
+
+/* Quando passa o mouse no cartão inteiro */
+.card-hover:hover {
+  transform: translateY(-10px); /* Sobe 10 pixels */
+  box-shadow: 0 10px 20px rgba(186, 12, 47, 0.2); /* Sombra vermelha suave */
+}
+
+/* Ajuste na imagem do card */
+.card-img-top {
+  height: 250px; /* Altura fixa para todas as fotos ficarem iguais */
+  object-fit: cover; /* Corta a imagem para caber sem esticar */
+}
+/* Altura total da tela menos a barra de navegação (aprox) */
+.split-screen-header {
+  height: 100vh; /* 100% da altura da visão */
+  width: 100%;
+  overflow: hidden;
+  padding-top: 70px; /* Espaço para o menu não ficar em cima */
+  background-color: #000;
+}
+
+/* O Container de cada coluna */
+.split-item {
+  position: relative;
+  height: 33vh; /* No celular: 1/3 da tela cada */
+  overflow: hidden; /* Garante que o zoom não saia da caixa */
+  border-right: 1px solid rgba(255,255,255,0.1); /* Linha fina separando */
+}
+
+/* Ajuste para COMPUTADOR (LG): Cada um ocupa 100% da altura */
+@media (min-width: 992px) {
+  .split-item {
+      height: 100vh; /* Altura total no PC */
+  }
+}
+
+/* O Link cobre tudo */
+.split-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  position: relative;
+}
+
+/* A Imagem de Fundo (Para podermos dar zoom nela) */
+.split-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s ease; /* Zoom suave */
+  /* Filtro escuro para o texto aparecer */
+  filter: brightness(0.6); 
+}
+
+/* O Texto Centralizado */
+.split-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+  width: 100%;
+}
+
+.split-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+}
+
+.split-content p {
+  font-family: "Varela Round", sans-serif;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+/* --- EFEITOS DE MOUSE (HOVER) --- */
+
+/* Quando passa o mouse na coluna: */
+.split-item:hover .split-bg {
+  transform: scale(1.1); /* Imagem aumenta 10% */
+  filter: brightness(0.8); /* Imagem clareia um pouco */
+}
+
+.split-item:hover h2 {
+  color: #ba0c2f; /* Título fica Vermelho Jaguar */
+}
+
+.split-item:hover p {
+  color: white;
+  opacity: 1;
+}
+/* Configuração da Imagem do Lançamento */
+.hero-image {
+  width: 100%;
+  height: 100%;
+  /* Altura Mínima: Garante que a imagem seja alta mesmo se o texto for curto */
+  min-height: 60vh; 
+  object-fit: cover; /* Corta as laterais da imagem se precisar, mas não estica/deforma */
+  display: block;
+}
+
+/* Ajuste específico para PC (Telas grandes) */
+@media (min-width: 992px) {
+  .image-column {
+      /* No PC, força a imagem a ter a altura da tela inteira (opcional, mas fica lindo) */
+      height: 100vh; 
+  }
+  
+  .hero-image {
+      height: 100vh; /* A imagem acompanha a altura da coluna */
+  }
+}
+/* --- SEÇÃO CTA MINIMALISTA --- */
+.cta-minimal {
+  padding: 6rem 0; /* Espaçamento bom em cima e embaixo */
+  background-color: #000000; /* Fundo Preto Sólido */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Uma linha cinza bem fina para separar */
+}
+
+/* Efeito no botão quando passa o mouse */
+.cta-minimal .btn-outline-light:hover {
+  background-color: #ba0c2f; /* Fica vermelho */
+  border-color: #ba0c2f;
+  color: white;
+  box-shadow: 0 0 15px rgba(186, 12, 47, 0.5); /* Brilho vermelho suave */
+}
+/* --- PRELOADER JAGUAR --- */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000; /* Fundo Preto */
+  z-index: 9999; /* Fica em cima de tudo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* A transição suave quando ele for sumir */
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+/* Classe para esconder o preloader depois */
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* O Logo pulsando */
+.preloader-logo {
+  width: 120px; /* Tamanho do logo */
+  animation: jaguar-pulse 2s infinite;
+}
+
+@keyframes jaguar-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.5; } /* Aumenta e fica meio transparente */
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* --- EFEITO FADE IN NO CONTEÚDO --- */
+/* Isso faz as 3 opções aparecerem suavemente depois que o preto sai */
+.split-screen-header {
+  opacity: 0; /* Começa invisível */
+  transform: scale(0.98); /* Começa levemente menor */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.split-screen-header.site-loaded {
+  opacity: 1; /* Fica visível */
+  transform: scale(1); /* Tamanho normal */
 }
