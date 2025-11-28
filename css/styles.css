@@ -10,6 +10,14 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+html {
+    scroll-behavior: smooth !important;
+}
+
+/* Isso garante que o título não fique escondido atrás do menu */
+section {
+    scroll-margin-top: 70px;
+}
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -11495,4 +11503,312 @@ body {
 .split-screen-header.site-loaded {
   opacity: 1; /* Fica visível */
   transform: scale(1); /* Tamanho normal */
+}
+/* --- INDICADORES DO SLIDESHOW (BOLINHAS) --- */
+
+/* O container que segura as bolinhas */
+.album-indicators {
+    position: absolute;
+    bottom: 15px;      /* Distância do fundo */
+    left: 50%;         /* Centraliza horizontalmente */
+    transform: translateX(-50%);
+    z-index: 10;       /* Garante que fique acima da imagem */
+    display: flex;
+    gap: 8px;          /* Espaço entre as bolinhas */
+    pointer-events: none; /* O clique passa direto (não atrapalha) */
+}
+
+/* O estilo de cada bolinha */
+.indicator-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;       /* Faz ficar redonda */
+    background-color: rgba(255, 255, 255, 0.3); /* Branco transparente (inativo) */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5); /* Sombra para ver em fundos claros */
+}
+
+/* O estilo da bolinha ATIVA (Foto selecionada) */
+.indicator-dot.active {
+    background-color: #ba0c2f; /* Vermelho Jaguar */
+    transform: scale(1.3);     /* Fica um pouquinho maior */
+    box-shadow: 0 0 5px rgba(186, 12, 47, 0.8); /* Brilho vermelho */
+}
+/* --- BOTÃO JAGUAR SMOOTH --- */
+.btn-jaguar-smooth {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Espaçamento chique entre letras */
+    text-decoration: none;
+    
+    /* Estado Inicial (Parado) */
+    color: #ffffff;
+    background-color: transparent; /* Fundo transparente */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Borda fina e discreta */
+    
+    /* A Mágica da Suavidade (0.4s é o tempo da animação) */
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    
+    position: relative;
+    overflow: hidden;
+}
+
+/* O Ícone da seta */
+.btn-jaguar-smooth i {
+    transition: transform 0.4s ease; /* A seta também anima */
+}
+
+/* --- QUANDO PASSA O MOUSE (HOVER) --- */
+.btn-jaguar-smooth:hover {
+    /* 1. Muda a cor para Vermelho Jaguar */
+    background-color: #ba0c2f;
+    border-color: #ba0c2f;
+    
+    /* 2. Cria um brilho vermelho em volta (Glow) */
+    box-shadow: 0 5px 25px rgba(186, 12, 47, 0.6);
+    
+    /* 3. Levanta levemente o botão */
+    transform: translateY(-3px);
+    
+    /* 4. Garante que o texto continue branco */
+    color: #ffffff;
+}
+
+/* Animação extra na seta (ela anda para a direita) */
+.btn-jaguar-smooth:hover i {
+    transform: translateX(5px);
+}
+/* --- VITRINE F-TYPE --- */
+
+/* Ajuste da imagem principal para manter o tamanho fixo e não pular */
+#ftype-main-img {
+    height: 350px; /* Altura fixa para não empurrar o layout */
+    object-fit: cover;
+    transition: opacity 0.3s ease; /* Fade suave na troca */
+}
+
+/* Estilo das Miniaturas */
+.thumb-img {
+    height: 60px; /* Altura das miniaturas */
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer; /* Mãozinha de clique */
+    border: 2px solid transparent; /* Borda invisível */
+    opacity: 0.6; /* Meio apagada quando não selecionada */
+    transition: all 0.3s ease;
+}
+
+/* Quando passa o mouse na miniatura */
+.thumb-img:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* Quando a miniatura está ATIVA (Selecionada) */
+.thumb-img.active-thumb {
+    border-color: #ba0c2f; /* Borda Vermelha */
+    opacity: 1; /* Totalmente visível */
+    box-shadow: 0 0 10px rgba(186, 12, 47, 0.5); /* Brilho vermelho */
+}
+
+/* Efeito de Fade (Usado pelo JS) */
+.fade-in-effect {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+/* Atualização para o F-TYPE Grande */
+#ftype-main-img {
+    height: 600px; /* Aumentei de 350px para 600px para ficar imponente */
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+    width: 100%;
+}
+
+/* Ajuste para celular (não ficar gigante demais no mobile) */
+@media (max-width: 768px) {
+    #ftype-main-img {
+        height: 300px;
+    }
+}
+/* --- HERO SCROLL EFFECT --- */
+
+.hero-scroll-wrapper {
+    position: relative;
+    /* A altura é definida no HTML (300vh) para controlar a duração */
+}
+
+/* A caixa da imagem que fica presa */
+.sticky-background {
+    position: sticky; /* O segredo: Gruda no topo */
+    top: 0;
+    height: 100vh; /* Ocupa a tela toda */
+    width: 100%;
+    overflow: hidden;
+    z-index: 1; /* Fica atrás do texto */
+}
+
+/* A Imagem em si */
+.hero-zoom-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Começa normal, o JS vai dar o zoom */
+    transform: scale(1);
+    transition: transform 0.1s linear; /* Transição suave para o JS */
+}
+
+/* Sombra escura para ler o texto */
+.overlay-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4); /* Escurece 40% */
+    z-index: 2;
+}
+
+/* O container dos textos */
+.scroll-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3; /* Fica na frente da imagem */
+}
+
+/* Cada "passo" do texto ocupa uma tela inteira */
+.hero-step {
+    height: 100vh; /* Cada frase dura 1 rolagem de tela */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Tipografia */
+.tracking-widest {
+    letter-spacing: 0.3em;
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+/* --- TEXTO COM DEGRADÊ METÁLICO (SILVER) --- */
+.text-silver-gradient {
+    /* 1. O Degradê: Branco em cima, Cinza escuro embaixo */
+    background: linear-gradient(to bottom, #ffffff 0%, #8a8a8a 100%);
+    
+    /* 2. O Truque: Recorta o fundo no formato da letra */
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    /* 3. Deixa a letra transparente para o fundo aparecer */
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback */
+    
+    /* Opcional: Uma sombra suave para destacar do fundo */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+/* 1. Força o fundo do site inteiro a ser preto */
+body {
+    background-color: #000000 !important;
+    color: #ffffff; /* Garante que textos soltos fiquem brancos */
+}
+
+/* 2. Garante que a seção "Projects" (onde ficam os carros) seja preta */
+#projects, .projects-section {
+    background-color: #000000 !important;
+}
+
+/* 3. Se houver algum container branco atrapalhando, pintamos ele também */
+.bg-light, .bg-white {
+    background-color: #000000 !important; /* Cuidado: isso muda tudo que era branco para preto */
+}
+/* --- CORREÇÃO DEFINITIVA DO MENU (PRETO -> BRANCO) --- */
+
+/* 1. ESTADO INICIAL (Topo da Página) */
+/* Usa 'html body' antes para ter força máxima sobre o template */
+html body #mainNav.fixed-top {
+    background-color: #000000 !important; /* PRETO OBRIGATÓRIO */
+    transition: background-color 0.4s ease-in-out;
+}
+
+/* Os Links no estado inicial (BRANCOS) */
+html body #mainNav.fixed-top .navbar-brand,
+html body #mainNav.fixed-top .nav-link {
+    color: #ffffff !important;
+}
+
+/* 2. ESTADO ROLAGEM (Quando desce a página) */
+/* A classe .navbar-shrink é adicionada pelo JS quando rola */
+html body #mainNav.fixed-top.navbar-shrink {
+    background-color: #ffffff !important; /* BRANCO OBRIGATÓRIO */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Os Links no estado de rolagem (PRETOS) */
+html body #mainNav.fixed-top.navbar-shrink .navbar-brand,
+html body #mainNav.fixed-top.navbar-shrink .nav-link {
+    color: #000000 !important;
+}
+
+/* 3. HOVER (Passar o Mouse) */
+/* Vermelho Jaguar sempre */
+html body #mainNav.fixed-top .nav-link:hover,
+html body #mainNav.fixed-top.navbar-shrink .nav-link:hover {
+    color: #ba0c2f !important;
+}
+/* --- BOTÃO OUTLINE JAGUAR (Fica Vermelho no Hover) --- */
+.btn-jaguar-outline {
+    background-color: transparent; /* Fundo transparente normal */
+    color: #ffffff;               /* Texto branco */
+    border: 2px solid #ba0c2f;    /* Borda Vermelha */
+    transition: all 0.3s ease;    /* Transição suave */
+}
+
+/* Quando passa o mouse */
+.btn-jaguar-outline:hover {
+    background-color: #ba0c2f;    /* Vira Vermelho Sólido */
+    color: #ffffff;               /* Texto continua branco */
+    box-shadow: 0 0 15px rgba(186, 12, 47, 0.5); /* Brilho vermelho */
+    transform: translateY(-2px);  /* Sobe um pouquinho */
+}
+/* Ajuste específico para as bolinhas do Interior */
+.js-album-hover .album-indicators {
+    bottom: 20px; /* Sobe um pouco as bolinhas */
+    background: rgba(0,0,0,0.3); /* Fundo escuro suave atrás das bolinhas */
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+/* --- CORREÇÃO DE VISIBILIDADE DO ÁLBUM --- */
+
+.js-album-hover {
+    display: block;
+    width: 100%;
+    min-height: 400px; /* Força uma altura mínima caso a imagem falhe */
+    background-color: #111; /* Fundo cinza escuro para ver se o bloco existe */
+}
+
+.album-img {
+    display: none; /* Esconde as inativas */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    animation: fadeEffect 0.5s;
+}
+
+/* ESTA É A CLASSE MAIS IMPORTANTE: */
+.album-img.active {
+    display: block !important; /* Força a imagem ativa a aparecer */
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
 }
