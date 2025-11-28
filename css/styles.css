@@ -10,8 +10,9 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-html {
-    scroll-behavior: smooth !important;
+ /*!
+html {//
+    scroll-behavior: smooth !important; 
 }
 
 /* Isso garante que o título não fique escondido atrás do menu */
@@ -11868,4 +11869,36 @@ html body #mainNav.fixed-top.navbar-shrink .nav-link:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9); 
     
     z-index: 5; 
+}
+/* AJUSTE FINAL: Fixa a Proporção do Container e Garante que Imagens Preencham */
+
+/* AJUSTE FINAL: PROPORÇÃO ULTRA-WIDE (21:9) */
+
+.js-album-hover {
+  position: relative;
+  width: 100%;
+  
+  /* VALOR MAIS BAIXO: Proporção 21:9 (42.86% = 9 / 21) */
+  padding-bottom: 42.86% !important; 
+  height: 0 !important; 
+  overflow: hidden;
+}
+
+.album-img {
+  /* Todas as imagens (ativas ou não) são absolutas. */
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* object-fit: cover garante que a imagem preencha o espaço sem distorcer, cortando o excesso */
+  object-fit: cover; 
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out; 
+}
+
+.album-img.active {
+  /* A imagem ativa agora só controla a visibilidade (opacity), não a posição. */
+  opacity: 1; 
 }

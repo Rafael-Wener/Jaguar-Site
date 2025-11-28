@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>JAGUAR - Start Bootstrap Theme</title>
+        <title>Jaguaroficial    </title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -158,11 +158,6 @@
                 <p class="lead text-white-50 mb-4">
                     Tecnologia e couro artesanal se encontram. Você não dirige este carro, você o veste.
                 </p>
-                <a class="btn btn-jaguar-outline btn-lg px-5 rounded-1" 
-                   onclick="scrollAnimado('cta-estoque')" 
-                   style="cursor: pointer;">
-                    QUERO ESTA MÁQUINA
-                </a>
             </div>
         </div>
 
@@ -535,6 +530,46 @@
         // 3. Liga o sensor em todos os passos
         document.querySelectorAll('.story-step').forEach(step => {
             observer.observe(step);
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // NOVO AJUSTE: Desativa qualquer aceleração nativa CSS
+        document.documentElement.style.scrollBehavior = 'auto'; 
+
+        // Seleciona todos os links da navbar...
+        const navLinks = document.querySelectorAll('#mainNav a[href^="#"]');
+        // ... (o restante do código permanece o mesmo) ...
+
+        // Garante que o scroll nativo CSS não interfira (embora a remoção seja no styles.css)
+        if (document.documentElement.style.scrollBehavior === 'smooth') {
+             document.documentElement.style.scrollBehavior = 'auto'; 
+        }
+
+        // Calcula a altura da navbar uma vez
+        const navbarCompensacao = navbar ? navbar.offsetHeight : 70; 
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Se o link tiver um hash válido (#lançamentos, #frota, #interior)
+                if (this.hash && this.hash !== "#") {
+                    e.preventDefault(); 
+                    
+                    const targetElement = document.querySelector(this.hash);
+
+                    if (targetElement) {
+                        // Calcula a posição de destino, subtraindo a altura da navbar
+                        const targetPosition = targetElement.offsetTop - navbarCompensacao;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
         });
     });
 </script>
