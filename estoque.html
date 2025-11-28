@@ -23,151 +23,93 @@
         </div>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container px-4 px-lg-5">
-        
-        <a class="navbar-brand" 
-           href="javascript:void(0)" 
-           onclick="animarScroll('page-top')"
-           style="cursor: pointer;">
-           JAGUAR
-        </a>
-        
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
-            <i class="fas fa-bars"></i>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto">
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link" 
-                       href="javascript:void(0)" 
-                       onclick="animarScroll('lancamentos')"
-                       style="cursor: pointer;">
-                       Lançamentos
-                    </a>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link" 
-                       href="javascript:void(0)" 
-                       onclick="animarScroll('nossos-modelos')"
-                       style="cursor: pointer;">
-                       Frota
-                    </a>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link" 
-                       href="javascript:void(0)" 
-                       onclick="animarScroll('interior-detalhes')"
-                       style="cursor: pointer;">
-                       Interior
-                    </a>
-                </li>
-
-            </ul>
-        </div>
-    </div>
-</nav>
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">JAGUAR</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Modelos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#signup">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <header class="split-screen-header">
             <div class="container-fluid p-0">
                 <div class="row g-0">
                     
-                    <div class="container-fluid p-0"> <div class="row g-0"> <div class="col-lg-4 col-md-6 split-item">
-            <a href="javascript:void(0)" class="split-link" onclick="scrollAnimado('lancamentos')" style="cursor: pointer;">
-                <div class="split-bg" style="background-image: url('https://e1.pxfuel.com/desktop-wallpaper/140/813/desktop-wallpaper-jaguar-logo---backgrounds-jaguar-logo-2021.jpg');"></div>
-                <div class="split-content">
-                    <h2 class="text-uppercase fw-bold">Lançamentos</h2>
-                    <p class="mb-0 text-white-50">O Futuro da Performance</p>
+                    <div class="col-lg-4 split-item">
+                        <a href="#lancamentos" class="split-link">
+                            <div class="split-bg" style="background-image: url('https://files.idyllic.app/files/static/3207932');"></div>
+                            <div class="split-content">
+                                <h2 class="text-uppercase">Lançamentos</h2>
+                                <p class="mb-0">O Futuro da Performance</p>
+                            </div>
+                        </a>
+                    </div>
+        
+                    <div class="col-lg-4 split-item">
+                        <a href="#nossos-modelos" class="split-link">
+                            <div class="split-bg" style="background-image: url('https://e1.pxfuel.com/desktop-wallpaper/140/813/desktop-wallpaper-jaguar%EE%80%81-%EE%80%80logo%EE%80%81-%EE%80%80-%EE%80%81-%EE%80%80backgrounds%EE%80%81-jaguar-logo-2021.jpg');"></div>
+                            <div class="split-content">
+                                <h2 class="text-uppercase">Nossos Modelos</h2>
+                                <p class="mb-0">Explore a Linha Completa</p>
+                            </div>
+                        </a>
+                    </div>
+        
+                    <div class="col-lg-4 split-item">
+                        <a href="#interior-detalhes" class="split-link">
+                            <div class="split-bg" style="background-image: url('https://files.idyllic.app/files/static/3207915');"></div>
+                            <div class="split-content">
+                                <h2 class="text-uppercase">Interior</h2>
+                                <p class="mb-0">Refinamento e Tecnologia</p>
+                            </div>
+                        </a>
+                    </div>
+        
                 </div>
-            </a>
-        </div>
-
-        <div class="col-lg-4 col-md-6 split-item">
-            <a href="javascript:void(0)" class="split-link" onclick="scrollAnimado('nossos-modelos')" style="cursor: pointer;">
-                <div class="split-bg" style="background-image: url('https://files.idyllic.app/files/static/3207932');"></div>
-                <div class="split-content">
-                    <h2 class="text-uppercase fw-bold">Nossa Frota</h2>
-                    <p class="mb-0 text-white-50">Escolha sua Máquina</p>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-lg-4 col-md-12 split-item">
-            <a href="javascript:void(0)" class="split-link" onclick="scrollAnimado('interior-detalhes')" style="cursor: pointer;">
-                <div class="split-bg" style="background-image: url('https://files.idyllic.app/files/static/3207915');"></div>
-                <div class="split-content">
-                    <h2 class="text-uppercase fw-bold">Interior</h2>
-                    <p class="mb-0 text-white-50">Luxo em cada detalhe</p>
-                </div>
-            </a>
-        </div>
-
-    </div>
-</div>
-
-</div>
+            </div>
         </header>
         
         
-        <section id="lancamentos" class="story-wrapper bg-black">
-    
-    <div class="story-sticky-container">
-        <div class="overlay-gradient"></div> <img src="https://s2-autoesporte.glbimg.com/br6nROF_pheBtRhrDgWPsnxDaS0=/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2024/e/k/Sf99ohTtuBADfEbHBIdg/jaguar-type-00-conceito-dianteira.jpg" class="story-bg opacity-100" id="bg-1" alt="Frente">
+        <section id="lancamentos" class="bg-black">
+            <div class="container-fluid p-0"> <div class="row g-0"> <div class="col-lg-7 image-column">
+                        <img src="https://media.production.jlrms.com/styles/thumbnail_big/s3/2024-11-29/image/523ea470-afa7-40bd-a11e-ee0a317b1912/JAGUAR_TYPE00_SIDEPROFILE_16x9_021224.jpg?VersionId=Gioa48Jov2e.aDM3t5wYmsbk6P80ikEY&h=fcaf77d5&itok=3j_yLDzs" alt="Novo Jaguar Lançamento" class="hero-image">
+                    </div>
         
-        <img src="https://wallpapercg.com/download/jaguar-type-00--31474.jpg" class="story-bg" id="bg-2" alt="Lateral">
+                    <div class="col-lg-5 d-flex align-items-center bg-black">
+                        <div class="p-5 text-center text-lg-start"> <div class="badge bg-danger mb-3 px-3 py-2 text-uppercase" style="background-color: #ba0c2f !important; letter-spacing: 2px;">
+                                Lançamento
+                            </div>
         
-        <img src="https://quatrorodas.abril.com.br/wp-content/uploads/2024/12/2024-Jaguar-Type-00-concept-200005-2048x886-1.webp" class="story-bg" id="bg-3" alt="Interior">
-    </div>
-
-    <div class="story-content">
+                            <h1 class="text-white text-uppercase fw-bold mb-4 display-4">
+                                Jaguar F-TYPE <span style="color: #fbfbfb;">00</span>
+                            </h1>
+                            
+                            <p class="text-white-50 mb-5 lead" style="font-weight: 300;">
+                                A evolução da espécie. Design esculpido pelo vento e uma motorização que desafia a física. O novo ícone chegou.
+                            </p>
         
-        <div class="story-step d-flex align-items-center justify-content-center" data-step="1">
-            <div class="text-center text-white p-5 bg-glass-dark">
-                <span class="badge bg-danger mb-3">CAPÍTULO I</span>
-                <h2 class="display-3 fw-bold">A LENDA RENASCE</h2>
-                <p class="lead text-white-50">
-                    Não é apenas um carro. É a herança de 70 anos de corridas britânicas, 
-                    esculpida para o século 21. O design flui como o vento.
-                </p>
-                <div class="mt-4 animate-bounce"><i class="fas fa-chevron-down"></i></div>
+                            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-lg-start">
+                                <a href="#configurador" class="btn btn-primary btn-lg px-4" style="background-color: #ba0c2f; border-color: #ba0c2f;">
+                                    Configurar
+                                </a>
+                                <a href="#detalhes" class="btn btn-outline-light btn-lg px-4">
+                                    Detalhes
+                                </a>
+                            </div>
+        
+                        </div>
+                    </div>
+        
+                </div>
             </div>
-        </div>
-
-        <div class="story-step d-flex align-items-center justify-content-start" data-step="2">
-            <div class="ms-lg-5 p-5 bg-glass-dark" style="max-width: 500px;">
-                <span class="badge bg-danger mb-3">CAPÍTULO II</span>
-                <h2 class="display-4 fw-bold">CORAÇÃO V8</h2>
-                <p class="lead text-white-50">
-                    Sob o capô, uma besta adormecida. O motor Supercharged entrega torque instantâneo. 
-                    Cada curva é um convite, cada reta é um desafio.
-                </p>
-            </div>
-        </div>
-
-        <div class="story-step d-flex align-items-center justify-content-end" data-step="3">
-            <div class="me-lg-5 p-5 bg-glass-dark text-end" style="max-width: 500px;">
-                <span class="badge bg-danger mb-3">CAPÍTULO III</span>
-                <h2 class="display-4 fw-bold">SEU COCKPIT</h2>
-                <p class="lead text-white-50 mb-4">
-                    Tecnologia e couro artesanal se encontram. Você não dirige este carro, você o veste.
-                </p>
-                <a class="btn btn-jaguar-outline btn-lg px-5 rounded-1" 
-                   onclick="scrollAnimado('cta-estoque')" 
-                   style="cursor: pointer;">
-                    QUERO ESTA MÁQUINA
-                </a>
-            </div>
-        </div>
-
-    </div>
-</section>
+        </section>
         <section id="nossos-modelos" class="estoque-section bg-black py-5">
             <div class="container">
                 
@@ -181,80 +123,92 @@
         
                 <div class="row g-4">
         
-                    <div class="col-lg-4 col-md-6 mb-4">
-    <div class="card car-card">
+                    <div class="col-md-4">
+                        <div class="card h-100 bg-dark text-white border-0 card-hover">
+                            <img src="https://t.ctcdn.com.br/06Af5u80HNM7mraSdyNT3wYKlmY=/900x675/smart/i792193.jpeg" class="card-img-top" alt="Jaguar XE">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">JAGUAR XE</h5>
+                                <p class="card-text text-white-50">2.0 R-Dynamic SE</p>
+                                <h4 style="color: #ba0c2f;">R$ 329.950</h4>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 pb-4 text-center">
+                                <a href="#" class="btn btn-outline-light btn-sm">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
         
-        <img src="https://media.drive.com.au/obj/tx_q:50,rs:auto:1920:1080:1/driveau/upload/cms/uploads/ujrlf8im3uvwl1c2obnn" class="card-img-top" alt="Jaguar F-TYPE R">
+                    <div class="col-md-4">
+                        <div class="card h-100 bg-dark text-white border-0 card-hover">
+                            <img src="https://www.topgear.com/sites/default/files/cars-car/image/2021/01/jag_xf_21my_driving_270121_5346.jpg" class="card-img-top" alt="Jaguar XF">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">JAGUAR XF</h5>
+                                <p class="card-text text-white-50">3.0 V6 Supercharged</p>
+                                <h4 style="color: #ba0c2f;">R$ 410.000</h4>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 pb-4 text-center">
+                                <a href="#" class="btn btn-outline-light btn-sm">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
         
-        <div class="card-body text-center">
-            <h5 class="card-title fw-bold">JAGUAR F-PACE</h5>
-            <p class="card-text text-danger fs-5 mb-3">R$ 640.300</p>
-            
-            <a href="detalhes-ftype.html" class="btn btn-danger btn-sm text-uppercase fw-bold w-100">
-                Ver Detalhes
-            </a>
-            
-        </div>
-    </div>
-</div>
+                    <div class="col-md-4">
+                        <div class="card h-100 bg-dark text-white border-0 card-hover">
+                            <img src="https://images.prismic.io/carwow/7405b07a-6126-47f9-9e4f-dcb6ee71414d_2021+Jaguar+E-Pace+front+quarter+driving.jpg" class="card-img-top" alt="Jaguar E-PACE">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">JAGUAR E-PACE</h5>
+                                <p class="card-text text-white-50">SUV Compacto Premium</p>
+                                <h4 style="color: #ba0c2f;">R$ 380.900</h4>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 pb-4 text-center">
+                                <a href="#" class="btn btn-outline-light btn-sm">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
         
-                    <div class="col-lg-4 col-md-6 mb-4">
-    <div class="card car-card">
-        <img src="https://c4.wallpaperflare.com/wallpaper/302/808/21/jaguar-f-type-coupe-wallpaper-preview.jpg" class="card-img-top" alt="Jaguar F-TYPE R">
+                    <div class="col-md-4">
+                        <div class="card h-100 bg-dark text-white border-0 card-hover">
+                            <img src="https://wereviewcars.co.uk/storage/repository/thumbnails/2025-02-16-000322883789-2.jpg" class="card-img-top" alt="Jaguar XE">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">JAGUAR F-TYPE</h5>
+                                <p class="card-text text-white-50">2.0 R-Dynamic SE</p>
+                                <h4 style="color: #ba0c2f;">R$ 329.950</h4>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 pb-4 text-center">
+                                <a href="#" class="btn btn-outline-light btn-sm">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
         
-        <div class="card-body text-center">
-            <h5 class="card-title fw-bold">JAGUAR F-TYPE</h5>
-            <p class="card-text text-danger fs-5 mb-3">R$ 680.000</p>
-            
-            <a href="detalhes-ftype.html" class="btn btn-danger btn-sm text-uppercase fw-bold w-100">
-                Ver Detalhes
-            </a>
-        </div>
-    </div>
-</div>
+                    <div class="col-md-4">
+                        <div class="card h-100 bg-dark text-white border-0 card-hover">
+                            <img src="https://external-preview.redd.it/jaguar-i-pace-to-retire-by-2025-i-pace-was-due-to-remain-on-v0-hg5LTXR92YtIrYim5pN7DEE2ORUPqcLnP5DfOJ33qIo.jpg?auto=webp&s=4f68cbc054e064c8776253145687e9f537eca9f0" class="card-img-top" alt="Jaguar XF">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">JAGUAR I-PACE</h5>
+                                <p class="card-text text-white-50">3.0 V6 Supercharged</p>
+                                <h4 style="color: #ba0c2f;">R$ 410.000</h4>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 pb-4 text-center">
+                                <a href="#" class="btn btn-outline-light btn-sm">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
         
-                    <div class="col-lg-4 col-md-6 mb-4">
-    <div class="card car-card">
-        <img src="https://euromotorsnews.com.br/wp-content/uploads/2020/11/Conhe%C3%A7a-o-Jaguar-I-Pace-um-SUV-100-el%C3%A9trico.jpg" class="card-img-top" alt="Jaguar F-TYPE R">
+                    <div class="col-md-4">
+                        <div class="card h-100 bg-dark text-white border-0 card-hover">
+                            <img src="https://cdn.motor1.com/images/mgl/j4qYo/s1/2019-jaguar-f-pace-svr.webp" class="card-img-top" alt="Jaguar E-PACE">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">JAGUAR F-PACE</h5>
+                                <p class="card-text text-white-50">SUV Compacto Premium</p>
+                                <h4 style="color: #ba0c2f;">R$ 380.900</h4>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 pb-4 text-center">
+                                <a href="#" class="btn btn-outline-light btn-sm">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
         
-        <div class="card-body text-center">
-            <h5 class="card-title fw-bold">JAGUAR I-PACE</h5>
-            <p class="card-text text-danger fs-5 mb-3">R$ 670.000</p>
-            
-            <a href="detalhes-ftype.html" class="btn btn-danger btn-sm text-uppercase fw-bold w-100">
-                Ver Detalhes
-            </a>
-        </div>
-    </div>
-</div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-    <div class="card car-card">
-        <img src="https://wallpaper.forfun.com/fetch/84/84f76f98a2037f6b6bb56ba7f130e04b.jpeg" class="card-img-top" alt="Jaguar F-TYPE R">
-        
-        <div class="card-body text-center">
-            <h5 class="card-title fw-bold">JAGUAR E-PACE</h5>
-            <p class="card-text text-danger fs-5 mb-3">R$ 550.000</p>
-            
-            <a href="detalhes-ftype.html" class="btn btn-danger btn-sm text-uppercase fw-bold w-100">
-                Ver Detalhes
-            </a>
-        </div>
-    </div>
-</div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-    <div class="card car-card">
-        <img src="https://wallpapers.com/images/featured/jaguar-xf-y25z74coh9xi3zeg.jpg" class="card-img-top" alt="Jaguar F-TYPE R">
-        
-        <div class="card-body text-center">
-            <h5 class="card-title fw-bold">JAGUAR XF</h5>
-            <p class="card-text text-danger fs-5 mb-3">R$ 550.000</p>
-            
-            <a href="detalhes-ftype.html" class="btn btn-danger btn-sm text-uppercase fw-bold w-100">
-                Ver Detalhes
-            </a>
-        </div>
-    </div>
-</div>
+                    </div>
+            </div>
         </section>
         
         
@@ -286,71 +240,48 @@
         </section>
         </section>
         <!-- About-->
-<!-- Contact-->
-<section class="contact-section bg-black">
-    <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5">
-            
-            <div class="col-md-4 mb-3 mb-md-0">
-                <div class="card py-4 h-100 shadow rounded-3" style="background-color: #ffffff !important;">
-                    <div class="card-body text-center">
-                        <i class="fas fa-map-marked-alt text-primary mb-2" style="color: #ba0c2f !important;"></i>
-                        <h4 class="text-uppercase m-0 text-black">Endereço</h4>
-                        <hr class="my-4 mx-auto" style="border-color: #ba0c2f; opacity: 1;" />
-                        <div class="small text-black-50">
-                            Avenida Europa, 1234<br />
-                            Jardins, São Paulo - SP
+        <!-- Contact-->
+        <section class="contact-section bg-black">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt mb-2" style="color: #ba0c2f;"></i>
+                                <h4 class="text-uppercase m-0">Endereço</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">Rua Pereira Franco, 303, Bairro São João, Brasil</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope mb-2" style="color: #ba0c2f !important;"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><a href="#!">clientejaguar@jaguarbrasil.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt mb-2" style="color: #ba0c2f !important;"></i>
+                                <h4 class="text-uppercase m-0">Telefone</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">0800-729-1420</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-md-4 mb-3 mb-md-0">
-                <div class="card py-4 h-100 shadow rounded-3" style="background-color: #ffffff !important;">
-                    <div class="card-body text-center">
-                        <i class="fas fa-envelope text-primary mb-2" style="color: #ba0c2f !important;"></i>
-                        <h4 class="text-uppercase m-0 text-black">Email</h4>
-                        <hr class="my-4 mx-auto" style="border-color: #ba0c2f; opacity: 1;" />
-                        <div class="small text-black-50">
-                            <a href="#!" class="text-black-50" style="text-decoration: none;">vendas@jaguarstore.com.br</a>
-                        </div>
-                    </div>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
                 </div>
             </div>
-
-            <div class="col-md-4 mb-3 mb-md-0">
-                <div class="card py-4 h-100 shadow rounded-3" style="background-color: #ffffff !important;">
-                    <div class="card-body text-center">
-                        <i class="fas fa-mobile-alt text-primary mb-2" style="color: #ba0c2f !important;"></i>
-                        <h4 class="text-uppercase m-0 text-black">Telefone</h4>
-                        <hr class="my-4 mx-auto" style="border-color: #ba0c2f; opacity: 1;" />
-                        <div class="small text-black-50">
-                            (11) 99999-8888
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-
-        <div class="social d-flex justify-content-center mt-5">
-    
-    <a class="mx-2" href="https://x.com/Jaguar" target="_blank">
-        <i class="fab fa-twitter text-white"></i>
-    </a>
-    
-    <a class="mx-2" href="https://www.facebook.com/Jaguar" target="_blank">
-        <i class="fab fa-facebook-f text-white"></i>
-    </a>
-    
-    <a class="mx-2" href="https://www.instagram.com/jaguar/" target="_blank">
-        <i class="fab fa-instagram text-white"></i>
-    </a>
-
-</div>
-        
-    </div>
-</section>
+        </section>
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; 2025 Jaguar Brasil. Todos os direitos reservados.</div></footer>
         <!-- Bootstrap core JS-->
@@ -423,119 +354,6 @@
             document.querySelector('.split-screen-header').classList.add('site-loaded');
             
         }, 2000); // Mude este número se quiser mais rápido ou devagar
-    });
-</script>
-<script>
-    // Função de Rolagem Matemática "Força Bruta"
-    function animarScroll(targetId) {
-        
-        let targetPosition = 0;
-        const startPosition = window.scrollY;
-        
-        // Se o destino for o TOPO (Logo Jaguar)
-        if (targetId === 'page-top') {
-            targetPosition = 0;
-        } else {
-            // Se for uma seção (ex: #lancamentos)
-            const element = document.getElementById(targetId);
-            if (!element) return; // Se não achar, para.
-            // Calcula posição menos o menu (80px)
-            targetPosition = element.getBoundingClientRect().top + startPosition - 80;
-        }
-
-        const distance = targetPosition - startPosition;
-        const duration = 1000; // 1 segundo de animação
-        let startTime = null;
-
-        function ease(t, b, c, d) {
-            t /= d / 2;
-            if (t < 1) return c / 2 * t * t + b;
-            t--;
-            return -c / 2 * (t * (t - 2) - 1) + b;
-        }
-
-        function animation(currentTime) {
-            if (startTime === null) startTime = currentTime;
-            const timeElapsed = currentTime - startTime;
-            const run = ease(timeElapsed, startPosition, distance, duration);
-            window.scrollTo(0, run);
-            if (timeElapsed < duration) requestAnimationFrame(animation);
-        }
-
-        requestAnimationFrame(animation);
-    }
-</script>
-<script>
-    // Função de Animação Matemática (Anti-Teleporte)
-    function scrollAnimado(targetId) {
-        const target = document.getElementById(targetId);
-        if (!target) {
-            console.error("Erro: Não encontrei a seção com ID: " + targetId);
-            return;
-        }
-
-        // Posição de destino (descontando 80px do menu)
-        const targetPosition = target.getBoundingClientRect().top + window.scrollY - 80;
-        const startPosition = window.scrollY;
-        const distance = targetPosition - startPosition;
-        const duration = 1000; // 1 segundo (mude para 1500 se quiser mais lento)
-        let startTime = null;
-
-        // A Mágica Matemática
-        function ease(t, b, c, d) {
-            t /= d / 2;
-            if (t < 1) return c / 2 * t * t + b;
-            t--;
-            return -c / 2 * (t * (t - 2) - 1) + b;
-        }
-
-        function animation(currentTime) {
-            if (startTime === null) startTime = currentTime;
-            const timeElapsed = currentTime - startTime;
-            const run = ease(timeElapsed, startPosition, distance, duration);
-            window.scrollTo(0, run);
-            if (timeElapsed < duration) requestAnimationFrame(animation);
-        }
-
-        requestAnimationFrame(animation);
-    }
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        
-        // 1. Configuração do Sensor
-        const observerOptions = {
-            root: null,
-            rootMargin: "0px",
-            threshold: 0.5 // Ativa quando 50% do texto estiver visível
-        };
-
-        // 2. O que fazer quando detectar o texto
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    
-                    // Descobre qual é o passo atual (1, 2 ou 3)
-                    const step = entry.target.getAttribute('data-step');
-                    
-                    // Remove a classe visível de TODAS as fotos
-                    document.querySelectorAll('.story-bg').forEach(bg => {
-                        bg.classList.remove('opacity-100');
-                    });
-
-                    // Adiciona a classe visível SÓ na foto certa
-                    const activeBg = document.getElementById(`bg-${step}`);
-                    if (activeBg) {
-                        activeBg.classList.add('opacity-100');
-                    }
-                }
-            });
-        }, observerOptions);
-
-        // 3. Liga o sensor em todos os passos
-        document.querySelectorAll('.story-step').forEach(step => {
-            observer.observe(step);
-        });
     });
 </script>
     </body>
